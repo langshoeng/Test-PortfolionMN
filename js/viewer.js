@@ -209,34 +209,51 @@ function openProject(project){
     // -------------------------------------
     // Gallery
     // -------------------------------------
-
-    else if (
-        project.gallery &&
-        project.gallery.length
-    ) {
-    
+    else if (project.gallery && project.gallery.length) {
         currentGallery = project.gallery;
         currentImage = 0;
     
-        viewerMedia.innerHTML = `
+        // Clear any existing gallery markup first
+        viewerMedia.innerHTML = "";
     
-            <button class="viewerArrow left" id="viewerPrev">&#10094;</button>
+        // Create wrapper container
+        const wrapper = document.createElement("div");
+        wrapper.id = "viewerMediaWrapper";
     
-            <img
-                id="viewerGalleryImage"
-                src="${currentGallery[0]}"
-            >
+        // Left arrow
+        const prevBtn = document.createElement("button");
+        prevBtn.className = "viewerArrow left";
+        prevBtn.id = "viewerPrev";
+        prevBtn.innerHTML = "&#10094;";
+        wrapper.appendChild(prevBtn);
     
-            <button class="viewerArrow right" id="viewerNext">&#10095;</button>
+        // Image
+        const img = document.createElement("img");
+        img.id = "viewerGalleryImage";
+        img.src = currentGallery[0];
+        wrapper.appendChild(img);
     
-            <div id="viewerCounter"></div>
+        // Right arrow
+        const nextBtn = document.createElement("button");
+        nextBtn.className = "viewerArrow right";
+        nextBtn.id = "viewerNext";
+        nextBtn.innerHTML = "&#10095;";
+        wrapper.appendChild(nextBtn);
     
-            <div id="viewerThumbs"></div>
+        // Counter
+        const counter = document.createElement("div");
+        counter.id = "viewerCounter";
+        wrapper.appendChild(counter);
     
-        `;
+        // Thumbnails
+        const thumbs = document.createElement("div");
+        thumbs.id = "viewerThumbs";
+        wrapper.appendChild(thumbs);
+    
+        // Inject wrapper into viewerMedia
+        viewerMedia.appendChild(wrapper);
     
         buildViewerGallery();
-    
     }
 
 }
