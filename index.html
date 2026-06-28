@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MANA Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+
+MANA
+
+</a>
+
+<button class="navbar-toggler"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+
+id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link" href="#hero">Home</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#projects">Projects</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#about">About</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#contact">Contact</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section id="hero">
+
+    <video autoplay muted loop playsinline id="heroVideo">
+        <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="welcome">HELLO, I'M</p>
+
+        <h1>MANA YOEURM</h1>
+
+        <h2 id="typing"></h2>
+
+        <a href="#projects" class="btn btn-light btn-lg mt-4">
+            View Portfolio
+        </a>
+
+    </div>
+
+</section>
+
+<section id="skills" class="fade-up">
+
+<div class="container">
+
+<h2 class="section-title text-center">
+
+Skills
+
+</h2>
+
+<div class="row text-center mt-5">
+
+<div class="col-md-3">
+
+<h3>After Effects</h3>
+
+</div>
+
+<div class="col-md-3">
+
+<h3>Premiere Pro</h3>
+
+</div>
+
+<div class="col-md-3">
+
+<h3>Photoshop</h3>
+
+</div>
+
+<div class="col-md-3">
+
+<h3>Illustrator</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>    
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container py-5">
+
+        <h2 class="section-title text-center">
+            Featured Works
+        </h2>
+
+        <div class="project-filters">
+
+            <button class="filter-btn active" data-filter="All">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="Motion Graphics">
+                Motion Graphics
+            </button>
+
+            <button class="filter-btn" data-filter="Video Editing">
+                Video Editing
+            </button>
+
+            <button class="filter-btn" data-filter="Graphic Design">
+                Graphic Design
+            </button>
+
+            <button class="filter-btn" data-filter="Photography">
+                Photography
+            </button>
+
+        </div>
+
+        <div id="projectsGrid" class="row g-4 mt-2">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about" class="fade-up">
+
+<div class="container">
+
+<h2 class="section-title">
+
+About Me
+
+</h2>
+
+<p class="about-text">
+
+I'm a freelance Video Editor and Motion Graphics Designer with experience in commercial production,
+
+education, and digital marketing. I specialize in creating promotional videos, motion graphics, 
+    
+and creative visual content using Adobe Premiere Pro, After Effects, Photoshop, and Cinema 4D.
+
+I'm passionate about combining creativity with technology. Whether it's developing more efficient editing workflows,
+    
+building custom tools, or exploring AI-powered solutions, I'm always looking for ways to work smarter while delivering high-quality results.
+
+With a background in TEFL (Teaching English as a Foreign Language), I bring strong communication skills, attention to detail, 
+    
+and a commitment to continuous learning into every project I take on.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="fade-up">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <p>Email : manayoeurm@gmail.com</p>
+        <p>Phone Number : 070705222</p>
+        <p>LinkedIn : Coming Soon</p>
+        <p>Facebook : Coming Soon</p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 MANA Portfolio
+
+</footer>
+
+
+
+<!-- ==========================================
+     PROJECT VIEWER
+========================================== -->
+
+<div id="projectViewer">
+
+    <div class="viewer-overlay"></div>
+
+    <div class="viewer-window">
+
+        <button id="viewerClose">&times;</button>
+
+        <!-- ================= MEDIA ================= -->
+        
+        <div id="viewerMediaWrapper">
+        
+            <button id="viewerPrevMedia" class="viewerArrow">
+                &#10094;
+            </button>
+        
+            <div id="viewerMedia"></div>
+        
+            <button id="viewerNextMedia" class="viewerArrow">
+                &#10095;
+            </button>
+        
+        </div>
+        
+        <!-- ================= THUMBNAILS ================= -->
+        
+        <div id="viewerThumbs"></div>
+        
+        <div id="viewerCounter"></div>
+        
+        <!-- ================= INFO ================= -->
+        
+        <div class="viewerContent">
+        
+            <div class="viewerHeader">
+        
+                <h2 id="viewerTitle"></h2>
+        
+                <div id="viewerMeta"></div>
+        
+            </div>
+        
+            <p id="viewerDescription"></p>
+        
+            <div id="viewerSoftware"></div>
+        
+        </div>
+
+    </div>
+
+</div>
+
+    
+<!-- ==========================================
+     IMAGE GALLERY
+========================================== -->
+
+<div id="galleryModal">
+
+    <div class="gallery-overlay"></div>
+
+    <button id="galleryClose">&times;</button>
+
+    <button id="galleryPrev">&#10094;</button>
+
+    <button id="galleryNext">&#10095;</button>
+
+    <img id="galleryImage" alt="Gallery Image">
+
+    <div id="galleryCounter"></div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/projects.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
